@@ -42,11 +42,13 @@ We have ~40% orders with price discrepancy.
 # Insights
 The analysis reveals that there are few factors which can be correlated to the inaccuracy in price prediction, including:
 
+### GPS and location
 ![GPS Confidence](./img/appendix_A_B.png)
 
 - 20% riding orders have poor GPS connection, which shows more pricing inconsistency
 - Rides outside the EU would likely experience more inconsistency in prediction than those in the EU. This would possibly mean there is a need for a region-specific or geolocation-based approach to enhance prediction accuracy, taking into account local factors that affect pricing.
 
+### Device and Apps
 ![Device](./img/appendix_C.png)
 - Also, the device characteristics can also affect the upfront prediction. Users with less common brands, such as Tecno, tend to experience less consistent predictions compared to users with more renowned brands like iPhone, Samsung, or Huawei. This suggests that device compatibility might play a role in pricing discrepancies.
 
@@ -54,12 +56,14 @@ The analysis reveals that there are few factors which can be correlated to the i
 
 - There're some noteworthy difference among different app versions for both riders and driver, too.
 
+### Distance and Duration
 ![Groundtruth vs prediction](./img/prediction.jpg)
 
--Since upfront_price was predicted based on `predicted_distance` and `predicted_duration`, it's understandable price discrepancy (`price_delta_perc` ) has strong correlation with `distance` and `duration`
+- Since upfront_price was predicted based on `predicted_distance` and `predicted_duration`, it's understandable price discrepancy (`price_delta_perc` ) has strong correlation with `distance` and `duration`
 - As we can see, while the duration prediction did a fair job, the distance prediction is a challengable. Thus, the price prediction was being affected
 - Improving distance prediction could be one of the key factors to improve the upfront pricing
 
+### Seasonality
 ![Seasonality](./img/week_day_hour.png)
 - We can observe some patterns of pricing inconsistency during lunch time of Monday, Tuesday, Friday and Saturday, especially Sunday from 8 - 10 pm, Tuesday evening 6-7 pm and after 11 pm
 
